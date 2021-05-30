@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>poker</title>
+  </head>
+  
+  <body>
+    <div class="container">
+        <h1>poker役判定</h1>
+            <%= form_with method: :post, local: true do |f| %>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">マーク選択</label>
+                            <%= f.select :mark1, [["D", "D"], ["H", "H"], ["S", "S"], ["C", "C"]], include_blank: "選択して下さい" %>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">数字選択</label>
+                            <%= f.select :num1, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], include_blank: "選択して下さい" %>
+                        </div>
+                    </div> 
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">マーク選択</label>
+                            <%= f.select :mark2, [["D", "D"], ["H", "H"], ["S", "S"], ["C", "C"]], include_blank: "選択して下さい" %>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">数字選択</label>
+                            <%= f.select :num2, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], include_blank: "選択して下さい" %>
+                        </div>
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">マーク選択</label>
+                            <%= f.select :mark3, [["D", "D"], ["H", "H"], ["S", "S"], ["C", "C"]], include_blank: "選択して下さい" %>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">数字選択</label>
+                            <%= f.select :num3, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], include_blank: "選択して下さい" %>
+                        </div>
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">マーク選択</label>
+                            <%= f.select :mark4, [["D", "D"], ["H", "H"], ["S", "S"], ["C", "C"]], include_blank: "選択して下さい" %>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">数字選択</label>
+                            <%= f.select :num4, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"],["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], include_blank: "選択して下さい" %>
+                        </div>
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">マーク選択</label>
+                            <%= f.select :mark5, [["D", "D"], ["H", "H"], ["S", "S"], ["C", "C"]], include_blank: "選択して下さい" %>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">数字選択</label>
+                            <%= f.select :num5, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], include_blank: "選択して下さい" %>
+                        </div>
+                    </div> 
+
+                <%= f.submit "送信" %>
+
+
+            <% end %>
+
+            
+            <% if @text %>
+                <%= p "あなたが出した手札は、#{@m_arrays[0]}#{@n_arrays[0]}・#{@m_arrays[1]}#{@n_arrays[1]}
+                ・#{@m_arrays[2]}#{@n_arrays[2]}・#{@m_arrays[3]}#{@n_arrays[3]}・#{@m_arrays[4]}#{@n_arrays[4]}です。"%>
+                </br>
+                <%= p @text %>
+            <% end %>
+
+
+            
+
+    </div>
+
+
+
+
+    
+  </body>
+</html>
